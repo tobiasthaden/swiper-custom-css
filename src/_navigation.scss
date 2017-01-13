@@ -1,0 +1,202 @@
+/* Arrows */
+.#{$swiperButtonPrevClass},
+.#{$swiperButtonNextClass}
+{
+    position: absolute;
+    top: 50%;
+    width: 27px;
+    height: 44px;
+    margin-top: -22px;
+    z-index: 10;
+    cursor: pointer;
+    background-size: 27px 44px;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    &.#{$swiperButtonDisabledClass}
+    {
+        opacity: 0.35;
+        cursor: auto;
+        pointer-events: none;
+    }
+}
+
+.#{$swiperButtonPrevClass}
+.#{$swiperModifierClass}-rtl .#{$swiperButtonNextClass}
+{
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+    left: 10px;
+    right: auto;
+    
+    &.#{$swiperButtonModifierClass}-black
+    {
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E");
+    }
+    
+    &.#{$swiperButtonModifierClass}-white
+    {
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+    }
+}
+
+.#{$swiperButtonNextClass},
+.#{$swiperModifierClass}-rtl .#{$swiperButtonPrevClass}
+{
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+    right: 10px;
+    left: auto;
+    
+    &.#{$swiperButtonModifierClass}-black
+    {
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E");
+    }
+
+    &.#{$swiperButtonModifierClass}-white
+    {
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23FFFFFF'%2F%3E%3C%2Fsvg%3E");
+    }
+}
+
+/* Pagination Styles */
+.#{$swiperPaginationClass}
+{
+    position: absolute;
+    text-align: center;
+    transition: 300ms;
+    transform: translate3d(0,0,0);
+    z-index: 10;
+
+    &.#{$swiperPaginationHiddenClass}
+    {
+        opacity: 0;
+    }
+}
+/* Common Styles */
+.#{$swiperPaginationModifierClass}-fraction,
+.#{$swiperPaginationModifierClass}-custom,
+.#{$swiperModifierClass}-horizontal > .#{$swiperPaginationModifierClass}-bullets
+{
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+}
+
+/* Bullets */
+.#{$swiperBulletClass}
+{
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #000;
+    opacity: 0.2;
+    
+    button &
+    {
+        border: none;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    .#{$swiperPaginationClickableClass} &
+    {
+        cursor: pointer;
+    }
+
+    .#{$swiperPaginationModifierClass}-white &
+    {
+        background: #fff;
+    }
+}
+
+.#{$swiperBulletActiveClass}
+{
+    opacity: 1;
+    background: #007aff;
+
+    .#{$swiperPaginationModifierClass}-white & { background: #fff }
+    .#{$swiperPaginationModifierClass}-black & { background: #000 }
+}
+
+.#{$swiperModifierClass}-vertical
+{
+    > .#{$swiperPaginationModifierClass}-bullets
+    {
+        right: 10px;
+        top: 50%;
+        transform:translate3d(0px,-50%,0);
+
+        .#{$swiperBulletClass}
+        {
+            margin: 5px 0;
+            display: block;
+        }
+    }
+}
+
+.#{$swiperModifierClass}-horizontal  > .#{$swiperPaginationModifierClass}-bullets .#{$swiperPaginationModifierClass}-bullet {
+    margin: 0 5px;
+}
+
+/* Progress */
+.#{$swiperPaginationProgressbarClass}
+{
+    background: rgba(0,0,0,0.25);
+    position: absolute;
+    
+    .#{$swiperPaginationProgressbarClass}
+    {
+        background: #007aff;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transform: scale(0);
+        transform-origin: left top;
+    }
+
+    .#{$swiperModifierClass}-rtl & .#{$swiperPaginationProgressbarClass}
+    {
+        transform-origin: right top;
+    }
+    
+    .#{$swiperModifierClass}-horizontal > & 
+    {
+        width: 100%;
+        height: 4px;
+        left: 0;
+        top: 0;
+    }
+    
+    .#{$swiperModifierClass}-vertical > &
+    {
+        width: 4px;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+    
+    &.#{$swiperPaginationModifierClass}-white
+    {
+        background: rgba(255,255,255,0.5);
+        
+        .#{$swiperPaginationProgressbarClass}
+        {
+            background: #fff;
+        }
+    }
+    
+    &.#{$swiperPaginationModifierClass}-black
+    {
+        .#{$swiperPaginationProgressbarClass}
+        {
+            background: #000;
+        }
+    }
+}

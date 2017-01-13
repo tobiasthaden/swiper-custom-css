@@ -1,0 +1,84 @@
+.#{$swiperContainerClass}
+{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.#{$swiperModifierClass}-no-flexbox .#{$swiperSlideClass}
+{
+    float: left;
+}
+
+.#{$swiperModifierClass}-vertical > .#{$swiperWrapperClass}
+{
+    flex-direction: column;
+}
+
+.#{$swiperWrapperClass}
+{
+    position:relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property:transform;
+    box-sizing: content-box;
+}
+
+.#{$swiperModifierClass}-android #{$swiperSlideClass}, .#{$swiperWrapperClass}
+{
+    transform:translate3d(0px,0,0);
+}
+
+.#{$swiperModifierClass}-multirow > .#{$swiperWrapperClass}
+{
+    flex-wrap: wrap;
+}
+
+.#{$swiperModifierClass}-free-mode > .#{$swiperWrapperClass}
+{
+    transition-timing-function: ease-out;
+    margin: 0 auto;
+}
+
+.#{$swiperSlideClass} {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Auto Height */
+.#{$swiperModifierClass}-autoheight, .#{$swiperModifierClass}-autoheight .#{$swiperSlideClass}
+{
+    height: auto;
+}
+
+.#{$swiperModifierClass}-autoheight .#{$swiperWrapperClass}
+{
+    align-items: flex-start;
+    transition-property: transform, height;
+}
+
+/* a11y */
+.#{$swiperContainerClass} .#{$swiperNotificationClass} {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    opacity: 0;
+    z-index: -1000;
+}
+
+/* IE10 Windows Phone 8 Fixes */
+.swiper-wp8-horizontal {
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+}
+.swiper-wp8-vertical {
+    -ms-touch-action: pan-x;
+    touch-action: pan-x;
+}
